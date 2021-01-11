@@ -5,7 +5,7 @@ pipelines:
        type: shippable/HealthCheck
        syntaxversion: 1.0.11
        configuration:
-           healthCheckUrl: 'www.google.com'
+           healthCheckUrl: https://www.google.com/
            notifyOnSuccess: true
            notifyOnFailure: true
            stuff:
