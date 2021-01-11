@@ -1,5 +1,5 @@
 pipelines:
- - name: sleep_pipeline
+ - name: sleep_pipeline_extension
    steps:
      - name: S_Bash_0023
        type: shippable/HealthCheck
