@@ -1,0 +1,13 @@
+pipelines:
+ - name: sleep_pipeline
+   steps:
+     - name: S_Bash_0023
+       type: shippable/HealthCheck
+       syntaxversion: 1.0.11
+         configuration:
+           healthCheckUrl: 'www.google.com'
+            notifyOnSuccess: true
+            notifyOnFailure: true
+            stuff:
+              - "hi"
+              - "hello"
