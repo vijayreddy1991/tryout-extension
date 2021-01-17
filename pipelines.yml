@@ -5,7 +5,7 @@ pipelines:
    steps:
      - name: S_Bash_0023
        type: shippable/HealthCheck
-       syntaxversion: 1.0.11
+       syntaxversion: latest
        configuration:
            healthCheckUrl: https://www.google.com/
            notifyOnSuccess: true
