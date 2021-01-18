@@ -13,3 +13,5 @@ pipelines:
            stuff:
               - "hi"
               - "hello"
+           integrations:
+            - name: Slack
