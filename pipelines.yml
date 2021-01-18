@@ -1,3 +1,14 @@
+resources:
+  - name: execTemplatesGit
+    type: GitRepo
+    configuration:
+      path: rahulnlb1/tryout-extension
+      gitProvider: RahulGithub
+      branches:
+        include: ^{{gitBranch}}$
+      files:
+        include: \bexecTemplates\/.+\b
+
 pipelines:
  - name: sleep_pipeline_extension
    configuration:
@@ -15,3 +26,5 @@ pipelines:
               - "hello"
            integrations:
             - name: Slack
+           inputResources:
+            - name: execTemplatesGit
