@@ -21,9 +21,6 @@ pipelines:
       - name: S_Bash_0023
         type: shippable/HealthCheck
         syntaxversion: 1.0.16
-        execution:
-          onSuccess:
-            - echo "success"
         configuration:
            healthCheckUrl: https://www.google.com/
            notifyOnSuccess: true
