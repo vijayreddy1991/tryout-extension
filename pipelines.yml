@@ -8,6 +8,10 @@ resources:
         include: ^{{gitBranch}}$
       files:
         include: \bexecTemplates\/.+\b
+  - name: testResource
+    type: testing/SampleResource
+    configuration:
+      foo: bar
 
 pipelines:
  - name: sleep_pipeline_extension
@@ -28,3 +32,4 @@ pipelines:
             - name: Slack
            inputResources:
             - name: execTemplatesGit
+            - name: testResource
