@@ -20,7 +20,6 @@ pipelines:
    steps:
       - name: S_Bash_0023
         type: test/HealthCheck
-        syntaxversion: 1.0.16
         configuration:
            healthCheckUrl: https://www.google.com/
            notifyOnSuccess: true
