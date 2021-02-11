@@ -9,7 +9,7 @@ resources:
       files:
         include: \bexecTemplates\/.+\b
   - name: testResource
-    type: test/TestResource
+    type: testing/SampleResource
     configuration:
       foo: bar
 
@@ -19,7 +19,7 @@ pipelines:
    #     nodePool: windows-master
    steps:
       - name: S_Bash_0023
-        type: test/HealthCheck
+        type: shippable/HealthCheck
         configuration:
            healthCheckUrl: https://www.google.com/
            notifyOnSuccess: true
