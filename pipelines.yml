@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       path: rahulnlb1/tryout-extension
-      gitProvider: RGithub
+      gitProvider: Github
       branches:
         include: ^{{gitBranch}}$
       files:
