@@ -1,5 +1,5 @@
 resources:
-  - name: execTemplatesGit
+  - name: execTemplatesGit1
     type: GitRepo
     configuration:
       path: rahulnlb1/tryout-extension
@@ -26,4 +26,4 @@ pipelines:
            integrations:
             - name: Slack
            inputResources:
-            - name: execTemplatesGit
+            - name: execTemplatesGit1
