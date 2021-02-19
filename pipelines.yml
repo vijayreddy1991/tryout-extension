@@ -8,11 +8,6 @@ resources:
         include: ^{{gitBranch}}$
       files:
         include: \bexecTemplates\/.+\b
-  - name: testResource
-    type: SampleResource
-    syntaxVersion: 0.0.2
-    configuration:
-      foo: bar
 
 pipelines:
  - name: sleep_pipeline_extension
@@ -20,8 +15,7 @@ pipelines:
    #     nodePool: windows-master
    steps:
       - name: S_Bash_0023
-        type: HealthCheck
-        syntaxVersion: 0.0.1
+        type: jfrog_dev/HealthCheck
         configuration:
            healthCheckUrl: https://www.google.com/
            notifyOnSuccess: true
@@ -33,4 +27,3 @@ pipelines:
             - name: Slack
            inputResources:
             - name: execTemplatesGit
-            - name: testResource
