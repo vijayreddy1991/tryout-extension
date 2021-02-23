@@ -3,16 +3,11 @@ resources:
     type: GitRepo
     configuration:
       path: rahulnlb1/tryout-extension
-      gitProvider: Github
+      gitProvider: RahulGithub
       branches:
         include: ^{{gitBranch}}$
       files:
         include: \bexecTemplates\/.+\b
-  - name: testResource
-    type: SampleResource
-    syntaxVersion: 0.0.2
-    configuration:
-      foo: bar
 
 pipelines:
  - name: sleep_pipeline_extension
@@ -21,7 +16,6 @@ pipelines:
    steps:
       - name: S_Bash_0023
         type: HealthCheck
-        syntaxVersion: 0.0.1
         configuration:
            healthCheckUrl: https://www.google.com/
            notifyOnSuccess: true
@@ -33,4 +27,3 @@ pipelines:
             - name: Slack
            inputResources:
             - name: execTemplatesGit
-            - name: testResource
