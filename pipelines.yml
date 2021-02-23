@@ -15,7 +15,7 @@ pipelines:
    #     nodePool: windows-master
    steps:
       - name: S_Bash_0023
-        type: HealthCheck
+        type: shippable/HealthCheck
         configuration:
            healthCheckUrl: https://www.google.com/
            notifyOnSuccess: true
