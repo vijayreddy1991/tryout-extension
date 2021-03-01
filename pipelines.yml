@@ -1,13 +1,9 @@
 resources:
-  - name: execTemplatesGit
-    type: GitRepo
+  - name: res1
+    type: testing/SampleResource
     configuration:
-      path: rahulnlb1/tryout-extension
-      gitProvider: RahulGithub
-      branches:
-        include: ^{{gitBranch}}$
-      files:
-        include: \bexecTemplates\/.+\b
+      foo: Hello
+      sourceArtifactory: art
 
 pipelines:
  - name: sleep_pipeline_extension
