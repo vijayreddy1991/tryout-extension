@@ -9,7 +9,7 @@ resources:
     type: GitRepo
     configuration:
       path: rahulnlb1/tryout-extension
-      gitProvider: RahulGithub
+      gitProvider: Github
       branches:
         include: ^{{gitBranch}}$
       files:
