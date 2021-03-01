@@ -4,6 +4,16 @@ resources:
     configuration:
       foo: Hello
       sourceArtifactory: art
+  - name: res2
+    type: GitRepo
+    configuration:
+      path: rahulnlb1/tryout-extension
+        gitProvider: Github
+        branches:
+          include: ^{{gitBranch}}$
+        files:
+          include: \bexecTemplates\/.+\b
+      
 
 pipelines:
  - name: sleep_pipeline_extension
@@ -23,3 +33,4 @@ pipelines:
             - name: Slack
            inputResources:
             - name: res1
+            - name: res2
