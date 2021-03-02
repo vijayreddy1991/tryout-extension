@@ -23,16 +23,14 @@ pipelines:
    #     nodePool: windows-master
    steps:
       - name: S_Bash_0023
-        type: shippable/HealthCheck
+        type: Bash
         configuration:
-           healthCheckUrl: https://www.google.com/
-           notifyOnSuccess: true
-           notifyOnFailure: true
-           stuff:
-              - "hi"
-              - "hello"
            integrations:
             - name: Slack
            inputResources:
             - name: res1
             - name: res2
+        execution:
+          onExecute:
+            - echo "$res_res1_sourceArtifactory_apikey"
+            - echo "$res_res1_gitProvider_url"
