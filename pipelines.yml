@@ -4,6 +4,7 @@ resources:
     configuration:
       foo: Hello
       sourceArtifactory: art
+      gitProvider: Github
 
   - name: res2
     type: GitRepo
