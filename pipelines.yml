@@ -37,6 +37,7 @@ pipelines:
            inputResources:
             - name: res1
             - name: res2
+            - name: res3
         execution:
           onExecute:
             - echo "$res_res1_sourceArtifactory_apikey"
