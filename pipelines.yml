@@ -16,7 +16,7 @@ resources:
       files:
         include: \bexecTemplates\/.+\b
         
-   - name: res3
+  - name: res3
     type: testing/SampleResource
     configuration:
       foo: Hello
