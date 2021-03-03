@@ -15,6 +15,13 @@ resources:
         include: ^{{gitBranch}}$
       files:
         include: \bexecTemplates\/.+\b
+        
+   - name: res3
+    type: testing/SampleResource
+    configuration:
+      foo: Hello
+      sourceArtifactory: art
+      gitProvider: Github
       
 
 pipelines:
