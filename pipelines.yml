@@ -24,7 +24,7 @@ pipelines:
            notifyOnFailure: true
            stuff:
               - "hi"
-              - "hello"
+              - ${value1}
            integrations:
             - name: Slack
            inputResources:
