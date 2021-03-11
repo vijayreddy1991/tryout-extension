@@ -2,7 +2,7 @@ resources:
   - name: res1
     type: testing/SampleResource
     configuration:
-      foo: ${boolEx}
+      foo: ${value2}
         
   - name: res3
     type: testing/SampleResource
@@ -18,7 +18,7 @@ pipelines:
         type: shippable/HealthCheck
         configuration:
         healthCheckUrl: https://www.google.com/
-           notifyOnSuccess: true
+           notifyOnSuccess: ${value1}
            notifyOnFailure: true
            stuff:
               - "hi"
