@@ -4,7 +4,6 @@ resources:
     configuration:
       foo: Hello
       sourceArtifactory: pipeArt
-      gitProvider: Github
 
 pipelines:
  - name: sleep_pipeline_extension
@@ -21,10 +20,5 @@ pipelines:
         execution:
           onExecute:
             - echo "$res_res1_sourceArtifactory_apikey"
-            - echo "$res_res1_gitProvider_url"
-            - |
-              if [ "$res_res1_gitProvider_url" != "https://api.github.com" ]; then
-               exit 1
-              fi
                 
             
