@@ -3,16 +3,6 @@ resources:
     type: testing/SampleResource
     configuration:
       foo: ${boolEx}
-
-  - name: res2
-    type: GitRepo
-    configuration:
-      path: rahulnlb1/tryout-extension
-      gitProvider: Github
-      branches:
-        include: ^{{gitBranch}}$
-      files:
-        include: \bexecTemplates\/.+\b
         
   - name: res3
     type: testing/SampleResource
@@ -32,7 +22,6 @@ pipelines:
             - name: Slack
            inputResources:
             - name: res1
-            - name: res2
             - name: res3
         execution:
           onExecute:
