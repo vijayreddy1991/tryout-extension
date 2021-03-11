@@ -8,7 +8,6 @@ resources:
     type: testing/SampleResource
     configuration:
       foo: true
-      
 
 pipelines:
  - name: sleep_pipeline_extension
@@ -16,15 +15,17 @@ pipelines:
    #     nodePool: windows-master
    steps:
       - name: S_Bash_0023
-        type: Bash
+        type: shippable/HealthCheck
         configuration:
+        healthCheckUrl: https://www.google.com/
+           notifyOnSuccess: true
+           notifyOnFailure: true
+           stuff:
+              - "hi"
+              - "hello"
            integrations:
             - name: Slack
            inputResources:
             - name: res1
             - name: res3
-        execution:
-          onExecute:
-            - echo "Hello world"
-                
             
