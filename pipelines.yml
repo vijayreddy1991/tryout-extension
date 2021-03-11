@@ -19,8 +19,8 @@ pipelines:
         configuration:
            environmentVariables:
              readOnly:
-               value1: true
-               value2: false
+               value1: 123
+               value2: 123
            healthCheckUrl: https://www.google.com/
            notifyOnSuccess: ${value1}
            notifyOnFailure: true
