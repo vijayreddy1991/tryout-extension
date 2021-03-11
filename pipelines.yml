@@ -20,5 +20,6 @@ pipelines:
         execution:
           onExecute:
             - echo "$res_res1_sourceArtifactory_apikey"
+            - echo ${value1}
                 
             
