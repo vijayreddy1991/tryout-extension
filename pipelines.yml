@@ -13,8 +13,9 @@ pipelines:
         configuration:
            environmentVariables:
              value1: "pipeArt"
+             value2: "Slack"
            integrations:
-            - name: Slack
+            - name: ${value2}
            inputResources:
             - name: res1
         execution:
