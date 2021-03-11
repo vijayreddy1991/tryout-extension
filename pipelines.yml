@@ -3,7 +3,7 @@ resources:
     type: testing/SampleResource
     configuration:
       foo: Hello
-      sourceArtifactory: pipeArt
+      sourceArtifactory: ${value1}
 
 pipelines:
  - name: sleep_pipeline_extension
@@ -13,6 +13,8 @@ pipelines:
       - name: S_Bash_0023
         type: Bash
         configuration:
+           environmentVariables:
+             value1: "pipeArt"
            integrations:
             - name: Slack
            inputResources:
