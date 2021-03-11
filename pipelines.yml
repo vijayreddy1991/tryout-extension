@@ -2,7 +2,7 @@ resources:
   - name: res1
     type: testing/SampleResource
     configuration:
-      foo: ${value2}
+      foo: true
         
   - name: res3
     type: testing/SampleResource
@@ -17,12 +17,12 @@ pipelines:
       - name: S_Bash_0023
         type: shippable/HealthCheck
         configuration:
-           environmentVariables:
-             readOnly:
-               value1: 123
-               value2: 123
+#            environmentVariables:
+#              readOnly:
+#                value1: 123
+#                value2: 123
            healthCheckUrl: https://www.google.com/
-           notifyOnSuccess: ${value1}
+           notifyOnSuccess: true
            notifyOnFailure: true
            stuff:
               - "hi"
