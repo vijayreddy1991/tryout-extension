@@ -18,8 +18,7 @@ pipelines:
         type: shippable/HealthCheck
         configuration:
            environmentVariables:
-             value1: true
-             value2: true
+             value1: "hello"
            healthCheckUrl: https://www.google.com/
            notifyOnSuccess: true
            notifyOnFailure: true
