@@ -23,5 +23,6 @@ pipelines:
           onExecute:
             - echo "$res_res1_sourceArtifactory_apikey"
             - echo ${value1}
+            - echo "$(find_resource_variable res1 foo)"
                 
             
