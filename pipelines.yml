@@ -2,9 +2,7 @@ resources:
   - name: res1
     type: testing/SampleResource
     configuration:
-      foo: Hello
-      sourceArtifactory: pipeArt
-      gitProvider: Github
+      foo: ${boolEx}
 
   - name: res2
     type: GitRepo
@@ -19,9 +17,7 @@ resources:
   - name: res3
     type: testing/SampleResource
     configuration:
-      foo: Hello
-      sourceArtifactory: art
-      gitProvider: Github
+      foo: true
       
 
 pipelines:
@@ -40,11 +36,6 @@ pipelines:
             - name: res3
         execution:
           onExecute:
-            - echo "$res_res1_sourceArtifactory_apikey"
-            - echo "$res_res1_gitProvider_url"
-            - |
-              if [ "$res_res1_gitProvider_url" != "https://api.github.com" ]; then
-               exit 1
-              fi
+            - echo "Hello world"
                 
             
