@@ -2,8 +2,8 @@ resources:
   - name: res1
     type: testing/SampleResource
     configuration:
-      foo: Hello
-      sourceArtifactory: ${value1}
+      foo: ${value3}
+      sourceArtifactory: pipeArt
 
 pipelines:
  - name: sleep_pipeline_extension
@@ -14,8 +14,9 @@ pipelines:
            environmentVariables:
              value1: "pipeArt"
              value2: "Slack"
+             value3: "Hello"
            integrations:
-            - name: ${value2}
+            - name: Slack
            inputResources:
             - name: res1
         execution:
