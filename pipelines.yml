@@ -6,24 +6,6 @@ resources:
       sourceArtifactory: pipeArt
       gitProvider: Github
 
-  - name: res2
-    type: GitRepo
-    configuration:
-      path: rahulnlb1/tryout-extension
-      gitProvider: Github
-      branches:
-        include: ^{{gitBranch}}$
-      files:
-        include: \bexecTemplates\/.+\b
-        
-  - name: res3
-    type: testing/SampleResource
-    configuration:
-      foo: Hello
-      sourceArtifactory: art
-      gitProvider: Github
-      
-
 pipelines:
  - name: sleep_pipeline_extension
    #configuration:
@@ -36,8 +18,6 @@ pipelines:
             - name: Slack
            inputResources:
             - name: res1
-            - name: res2
-            - name: res3
         execution:
           onExecute:
             - echo "$res_res1_sourceArtifactory_apikey"
