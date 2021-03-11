@@ -17,7 +17,11 @@ pipelines:
       - name: S_Bash_0023
         type: shippable/HealthCheck
         configuration:
-        healthCheckUrl: https://www.google.com/
+           environmentVariables:
+             readOnly:
+               value1: true
+               value2: false
+           healthCheckUrl: https://www.google.com/
            notifyOnSuccess: ${value1}
            notifyOnFailure: true
            stuff:
