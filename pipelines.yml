@@ -9,21 +9,22 @@ pipelines:
  - name: sleep_pipeline_extension
    steps:
       - name: S_Bash_0023
-        type: Bash
+        type: shippable/HealthCheck
         configuration:
            environmentVariables:
              value1: "pipeArt"
              value2: "Slack"
              value3: "Hello"
              value4: "res1"
+           healthCheckUrl: https://www.google.com/
+           notifyOnSuccess: true
+           notifyOnFailure: true
+           stuff:
+              - "hi"
+              - ${value1}
            integrations:
             - name: Slack
            inputResources:
             - name: ${value4}
-        execution:
-          onExecute:
-            - echo "$res_res1_sourceArtifactory_apikey"
-            - echo ${value1}
-            - echo "$(find_resource_variable res1 foo)"
                 
             
