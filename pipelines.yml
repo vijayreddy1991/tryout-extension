@@ -15,10 +15,11 @@ pipelines:
              value1: "pipeArt"
              value2: "Slack"
              value3: "Hello"
+             value4: "res1"
            integrations:
             - name: Slack
            inputResources:
-            - name: res1
+            - name: ${value4}
         execution:
           onExecute:
             - echo "$res_res1_sourceArtifactory_apikey"
