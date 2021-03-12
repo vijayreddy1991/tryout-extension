@@ -3,7 +3,7 @@ resources:
     type: testing/SampleResource
     configuration:
       foo: ${value3}
-      sourceArtifactory: pipeArt
+      sourceArtifactory: ${value1}
 
 pipelines:
  - name: sleep_pipeline_extension
@@ -25,6 +25,6 @@ pipelines:
            integrations:
             - name: Slack
            inputResources:
-            - name: ${value4}
+            - name: res1
                 
             
