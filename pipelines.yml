@@ -3,7 +3,7 @@ resources:
     type: testing/SampleResource
     configuration:
       foo: ${value3}
-      sourceArtifactory: ${value1}
+      sourceArtifactory: pipeArt
 
 pipelines:
  - name: sleep_pipeline_extension
