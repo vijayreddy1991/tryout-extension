@@ -13,7 +13,7 @@ resources:
     configuration:
       foo: Hello
       sourceArtifactory: pipeArt
-      # gitProvider: Github
+      gitProvider: Github
 
 pipelines:
  - name: sleep_pipeline_extension
@@ -22,7 +22,7 @@ pipelines:
         type: shippable/HealthCheck
         configuration:
            healthCheckUrl: https://www.google.com/
-           #notifyOnSuccess: true
+           notifyOnSuccess: true
            notifyOnFailure: true
            etc:
              configuration:
