@@ -13,7 +13,7 @@ resources:
     configuration:
       foo: Hello
       sourceArtifactory: pipeArt
-      gitProvider: Github
+      # gitProvider: Github
 
 pipelines:
  - name: sleep_pipeline_extension
