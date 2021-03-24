@@ -9,24 +9,21 @@ resources:
       files:
         include: \bexecTemplates\/.+\b
   - name: res1
-    type: SampleResource
-    syntaxVersion: 0.0.3
+    type: testing/SampleResource
     configuration:
-      foo: bar
+      foo: Hello
+      sourceArtifactory: pipeArt
+      gitProvider: Github
 
 pipelines:
  - name: sleep_pipeline_extension
    steps:
       - name: S_Bash_0023
         type: HealthCheck
-        syntaxVersion: 0.0.3
         configuration:
            healthCheckUrl: https://www.google.com/
            notifyOnSuccess: true
            notifyOnFailure: true
-           stuff:
-              - "hi"
-              - "hello"
            integrations:
             - name: Slack
            inputResources:
