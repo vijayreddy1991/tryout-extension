@@ -8,7 +8,7 @@ resources:
         include: ^{{gitBranch}}$
       files:
         include: \bexecTemplates\/.+\b
-  - name: res1
+  - name: res5
     type: testing/SampleResource
     configuration:
       foo: Hello
@@ -28,4 +28,4 @@ pipelines:
             - name: Slack
            inputResources:
             - name: execTemplatesGit
-            - name: res1
+            - name: res5
