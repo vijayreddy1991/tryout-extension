@@ -20,7 +20,7 @@ resources:
     type: testing/SampleResource
     configuration:
       foo: Hello
-      sourceArtifactory: art
+      sourceArtifactory: pipeArt
       gitProvider: Github
       
 
