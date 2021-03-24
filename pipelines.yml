@@ -26,6 +26,7 @@ pipelines:
            notifyOnFailure: true
            etc:
              example: bar
+             example2: bar
            integrations:
             - name: Slack
            inputResources:
