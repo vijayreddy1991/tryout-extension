@@ -19,7 +19,7 @@ pipelines:
  - name: sleep_pipeline_extension
    steps:
       - name: S_Bash_0023
-        type: HealthCheck
+        type: shippable/HealthCheck
         configuration:
            healthCheckUrl: https://www.google.com/
            notifyOnSuccess: true
