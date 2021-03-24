@@ -24,8 +24,8 @@ pipelines:
            healthCheckUrl: https://www.google.com/
            notifyOnSuccess: true
            notifyOnFailure: true
-           etc:
-             example: bar
+           #etc:
+           #  example: bar
            integrations:
             - name: Slack
            inputResources:
