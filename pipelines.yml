@@ -22,7 +22,7 @@ pipelines:
         type: shippable/HealthCheck
         configuration:
            healthCheckUrl: https://www.google.com/
-           notifyOnSuccess: true
+           #notifyOnSuccess: true
            notifyOnFailure: true
            integrations:
             - name: Slack
