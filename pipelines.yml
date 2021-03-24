@@ -3,7 +3,6 @@ resources:
     type: testing/SampleResource
     configuration:
       foo: Hello
-      sourceArtifactory: pipeArt
       gitProvider: Github
 
   - name: res2
