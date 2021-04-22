@@ -9,6 +9,12 @@ resources:
       files:
         include: \bexecTemplates\/.+\b
 
+  - name: testResource
+    type: testing/SampleResource
+    configuration:
+      foo: Hello
+
+
 pipelines:
  - name: sleep_pipeline_extension
    steps:
