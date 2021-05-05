@@ -17,12 +17,12 @@ pipelines:
               - name: execTemplatesGit
         execution:
           onExecute:
-            - echo "hello ${WORLD}" 
-     - name: Step2
+            - echo "hello ${WORLD}"
+      - name: Step2
         type: Bash
         configuration:
           inputSteps:
             - name: S_Bash_0023
         execution:
           onExecute:
-            - echo "hello ${WORLD}" 
+            - echo "hello ${WORLD}"
