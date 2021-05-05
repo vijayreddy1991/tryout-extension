@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       path: rahulnlb1/tryout-extension
-      gitProvider: RahulGithub
+      gitProvider: rahuljGithub
       branches:
         include: ^{{gitBranch}}$
       files:
@@ -13,15 +13,9 @@ pipelines:
  - name: sleep_pipeline_extension
    steps:
       - name: S_Bash_0023
-        type: shippable/HealthCheck
-        configuration:
-           healthCheckUrl: https://www.google.com/
-           notifyOnSuccess: true
-           notifyOnFailure: true
-           stuff:
-              - "hi"
-              - "hello"
-           integrations:
-            - name: Slack
-           inputResources:
+        type: Bash
+          inputResources:
             - name: execTemplatesGit
+        execution:
+          onExecute:
+            - echo "hello ${WORLD}" 
