@@ -14,7 +14,7 @@ pipelines:
    steps:
       - name: S_Bash_0023
         type: Bash
-          inputResources:
+        inputResources:
             - name: execTemplatesGit
         execution:
           onExecute:
