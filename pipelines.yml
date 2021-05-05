@@ -17,7 +17,7 @@ pipelines:
               - name: execTemplatesGit
         execution:
           onExecute:
-            - echo "hello world ${WORLD}"
+            - echo "hello ${WORLD}"
       - name: Step2
         type: Bash
         configuration:
