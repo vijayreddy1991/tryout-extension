@@ -2,8 +2,8 @@ resources:
   - name: execTemplatesGit
     type: GitRepo
     configuration:
-      path: rahulnlb1/tryout-extension
-      gitProvider: Github
+      path: vijayreddy1991/tryout-extension
+      gitProvider: vijay
       branches:
         include: ^{{gitBranch}}$
       files:
