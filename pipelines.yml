@@ -27,7 +27,5 @@ pipelines:
            stuff:
               - "hi"
               - "hello"
-           integrations:
-            - name: Slack
            inputResources:
             - name: execTemplatesGit
