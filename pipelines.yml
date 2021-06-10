@@ -1,27 +1,23 @@
 resources:
-  - name: execTemplatesGit
-    type: GitRepo
+  - name: EXT_S_SYC_AU_0025_fileSpec
+    type: FileSpec
     configuration:
-      path: vijayreddy1991/tryout-extension
-      gitProvider: vijay
-      branches:
-        include: ^{{gitBranch}}$
-      files:
-        include: \bexecTemplates\/.+\b
-
+      sourceArtifactory: s_artifactory
+      pattern: "test-automation-generic-local/test.txt"
 pipelines:
- - name: sleep_pipeline_extension
-   steps:
-      - name: S_Bash_0023
-        type: shippable/HealthCheck
+  - name: EXT_S_SYC_AU_0025
+    steps:
+      - name: EXT_S_SYC_AU_0025
+        type: UploadArtifact
+        syntaxVerion: 1.0.0
         configuration:
-           healthCheckUrl: https://www.google.com/
-           notifyOnSuccess: true
-           notifyOnFailure: true
-           stuff:
-              - "hi"
-              - "hello"
-           integrations:
-            - name: Slack
-           inputResources:
-            - name: execTemplatesGit
+          targetPath: "test-automation-generic-local/EXT_S_SYC_AU_0025"
+          integrations:
+            - name: s_artifactory
+          inputResources:
+            - name: EXT_S_SYC_AU_0025_fileSpec
+            
+            
+            
+ 
+ 
