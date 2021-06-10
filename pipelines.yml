@@ -1,6 +1,17 @@
 resources:
+  - name: LinuxVMDeploy_fileSpec
+    type: FileSpec
+    configuration:
+      sourceArtifactory: s_artifactory
+      pattern: "test-automation-generic-local/LinuxVMDeploy_fileSpec.txt"
 
-
+  - name: myVM
+    type: VmCluster
+    configuration:
+      sshKey: s_VM_DEPLOY_SSHKEY
+      targets:
+        - ${int_s_VM_DEPLOY_VM_ADDRESS_0}
+        - ${int_s_VM_DEPLOY_VM_ADDRESS_1}
 
 pipelines:
   - name: myLinuxVMDeployStep
@@ -8,11 +19,12 @@ pipelines:
     configuration:
       environmentVariables:
         DEPLOY_TARGETS_OVERRIDE: test # Comma separated string of VM addresses that overrides those in the vmCluster resource.
-      targetDirectory:           new # Path of the directory where the deploy artifacts will be uploaded. The directory will be created if it does not exist. Default "<sshUser's $HOME>/$step_name/$run_id".
-      deployCommand:             install # Required. Command to run on the VM after artifacts have been uploaded. Runs in the conext of targetDirectory.
+      targetDirectory: new # Path of the directory where the deploy artifacts will be uploaded. The directory will be created if it does not exist. Default "<sshUser's $HOME>/$step_name/$run_id".
+      deployCommand: install # Required. Command to run on the VM after artifacts have been uploaded. Runs in the conext of targetDirectory.
       integrations:
         - name: s_artifactory        # Required if using ReleaseBundle inputResource.
       inputResources: 
-        - name:                  <VMCluster resource> # Required
+        - name: myVM
+        - name: LinuxVMDeploy_fileSpec
 
  
