@@ -1,31 +1,18 @@
 resources:
-  - name: execTemplatesGit
-    type: GitRepo
-    configuration:
-      path: vijayreddy1991/tryout-extension
-      gitProvider: vijay
-      branches:
-        include: ^{{gitBranch}}$
-      files:
-        include: \bexecTemplates\/.+\b
 
-  - name: testResource
-    type: testing/SampleResource
-    configuration:
-      foo: Hello
 
 
 pipelines:
- - name: sleep_pipeline_extension
-   steps:
-      - name: S_Bash_0023
-        type: shippable/HealthCheck
-        configuration:
-           healthCheckUrl: https://www.google.com/
-           notifyOnSuccess: true
-           notifyOnFailure: true
-           stuff:
-              - "hi"
-              - "hello"
-           inputResources:
-            - name: execTemplatesGit
+  - name: myLinuxVMDeployStep
+    type: LinuxVMDeploy
+    configuration:
+      environmentVariables:
+        DEPLOY_TARGETS_OVERRIDE: test # Comma separated string of VM addresses that overrides those in the vmCluster resource.
+      targetDirectory:           new # Path of the directory where the deploy artifacts will be uploaded. The directory will be created if it does not exist. Default "<sshUser's $HOME>/$step_name/$run_id".
+      deployCommand:             install # Required. Command to run on the VM after artifacts have been uploaded. Runs in the conext of targetDirectory.
+      integrations:
+        - name: s_artifactory        # Required if using ReleaseBundle inputResource.
+      inputResources: 
+        - name:                  <VMCluster resource> # Required
+
+ 
