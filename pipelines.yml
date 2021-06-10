@@ -1,9 +1,4 @@
 resources:
-  - name: LinuxVMDeploy_fileSpec
-    type: FileSpec
-    configuration:
-      sourceArtifactory: s_artifactory
-      pattern: "test-automation-generic-local/LinuxVMDeploy_fileSpec.txt"
 
   - name: myVM
     type: VmCluster
@@ -34,6 +29,6 @@ pipelines:
             - name: s_artifactory        # Required if using ReleaseBundle inputResource.
           inputResources: 
             - name: myVM
-            - name: LinuxVMDeploy_fileSpec
+
 
  
