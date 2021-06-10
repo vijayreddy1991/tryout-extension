@@ -23,6 +23,13 @@ pipelines:
             DEPLOY_TARGETS_OVERRIDE: test # Comma separated string of VM addresses that overrides those in the vmCluster resource.
           targetDirectory: new # Path of the directory where the deploy artifacts will be uploaded. The directory will be created if it does not exist. Default "<sshUser's $HOME>/$step_name/$run_id".
           deployCommand: install # Required. Command to run on the VM after artifacts have been uploaded. Runs in the conext of targetDirectory.
+          rollbackCommand: testing        # Command to run on VMs in the event of a failed deployment. Runs only on VMs that were deployed to successfully.
+          rolloutDelaySecs: 10           # Time in seconds to wait between deploys.
+          fastFail: false                  # If true, the step will not deploy to additional VMs after the first failure. Default true.
+          sshUser: 192.168.33.12                  # The ssh user used to connect to target VMs.
+          vmEnvironmentVariables:     # Environment variables to set on target VMs. They will be in the environment for deployCommand and postDeployCommand. 
+            - "foo=bar"
+            - "baz=${step_name}" 
           integrations:
             - name: s_artifactory        # Required if using ReleaseBundle inputResource.
           inputResources: 
